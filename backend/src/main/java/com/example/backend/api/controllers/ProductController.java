@@ -17,6 +17,7 @@ public class ProductController {
     private static final String GET_ONE_PRODUCT = "/product/{id}";
     private static final String EDIT_ID_PRODUCT = "/edit/product/{id}";
     private static final String DELETE_PRODUCT = "delete/product/{id}";
+    private static final String DELETE_PRODUCTS_All = "delete/products";
 
     public ProductController(ProductService productService) {
         this.productService = productService;
@@ -45,5 +46,10 @@ public class ProductController {
     @DeleteMapping(DELETE_PRODUCT)
     public void deleteIdProduct(@PathVariable Long id){
         productService.deleteIdProduct(id);
+    }
+
+    @DeleteMapping(DELETE_PRODUCTS_All)
+    public void deleteAllProduct(){
+        productService.deleteAll();
     }
 }
