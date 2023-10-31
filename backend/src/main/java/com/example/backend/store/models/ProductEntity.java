@@ -17,7 +17,7 @@ public class ProductEntity {
     //private String customer_reviews;
     private String seller;
     //private Image image;
-    private int number;
+    private String number;
 
     public ProductEntity() {}
 
@@ -69,11 +69,11 @@ public class ProductEntity {
         this.seller = seller;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 }

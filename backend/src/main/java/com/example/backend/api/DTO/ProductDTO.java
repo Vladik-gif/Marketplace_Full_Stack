@@ -10,7 +10,7 @@ public class ProductDTO {
     private String characteristic_product;
     private double price;
     private String seller;
-    private int number;
+    private String number;
 
     public ProductDTO() {
 
@@ -64,11 +64,11 @@ public class ProductDTO {
         this.seller = seller;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 }
