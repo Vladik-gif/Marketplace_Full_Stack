@@ -1,7 +1,6 @@
 package com.example.backend.store.models;
 
 import jakarta.persistence.*;
-import java.awt.*;
 
 @Entity
 @Table(name = "Product")

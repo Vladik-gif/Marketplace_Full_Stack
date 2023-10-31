@@ -1,7 +1,7 @@
 package com.example.backend.api.controllers;
 
 import com.example.backend.api.DTO.ProductDTO;
-import com.example.backend.api.servers.ProductService;
+import com.example.backend.api.services.ProductService;
 import com.example.backend.store.models.ProductEntity;
 import org.springframework.web.bind.annotation.*;
 
