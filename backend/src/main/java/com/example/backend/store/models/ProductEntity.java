@@ -15,7 +15,6 @@ public class ProductEntity {
     private double price;
     //private String customer_reviews;
     private String seller;
-    //private Image image;
     private String number;
 
     public ProductEntity() {}
