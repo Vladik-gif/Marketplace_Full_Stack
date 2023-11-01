@@ -12,10 +12,11 @@ import java.io.IOException;
 @RestController
 public class ImageController {
 
-    private ImageService imageService;
-
+    private final ImageService imageService;
     private static final String CREATE_IMAGE = "/image";
     private static final String GET_IMAGE_NAME = "/{name}";
+    private static final String EDIT_IMAGE_ID = "/edit/image/id"; //URL не працює
+    private static final String DELETE_IMAGE_ID = "/delete/image/{id}";
 
     public ImageController(ImageService imageService) {
         this.imageService = imageService;
@@ -30,11 +31,21 @@ public class ImageController {
 
     @GetMapping(GET_IMAGE_NAME)
     public ResponseEntity<?> downloadImage(@PathVariable String name){
-        byte[] imageData= imageService.downloadImage(name);
+        byte[] imageData = imageService.downloadImage(name);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .contentType(MediaType.valueOf("image/png"))
                 .body(imageData);
+    }
+
+    @PutMapping
+    public ResponseEntity<?> editImage(@RequestParam MultipartFile image, @PathVariable String name){
+        return null; //розробляється
+    }
+
+    @DeleteMapping(DELETE_IMAGE_ID)
+    public void deleteIdImage(@PathVariable Long id){
+        imageService.deleteIdImage(id);
     }
 }

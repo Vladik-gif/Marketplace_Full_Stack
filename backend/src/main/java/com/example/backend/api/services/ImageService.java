@@ -44,5 +44,15 @@ public class ImageService implements ImageFileServiceImpl {
         Optional<ImageFile> dbImageData = imageFileRepository.findByName(name);
         return ImageUtl.decompressImage(dbImageData.get().getImage());
     }
-}
 
+    @Override
+    public byte[] editLoadImage(MultipartFile image, String name) {
+
+        return new byte[0];
+    }
+
+    @Override
+    public void deleteIdImage(Long id) {
+        imageFileRepository.deleteById(id);
+    }
+}

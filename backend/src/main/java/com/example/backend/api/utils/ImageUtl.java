@@ -40,7 +40,7 @@ public class ImageUtl {
         try {
             while (!inflater.finished()) {
                 int count = inflater.inflate(tmp);
-                outputStream.write(tmp, 0, count);
+                    outputStream.write(tmp, 0, count);
             }
             outputStream.close();
         } catch (Exception ignored) {
