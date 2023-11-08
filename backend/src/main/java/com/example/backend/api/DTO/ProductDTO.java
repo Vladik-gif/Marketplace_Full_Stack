@@ -9,6 +9,8 @@ public class ProductDTO {
     private String description_product;
     private String characteristic_product;
     private double price;
+
+    private String category;
     private String seller;
     private String number;
 
@@ -54,6 +56,14 @@ public class ProductDTO {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getSeller() {

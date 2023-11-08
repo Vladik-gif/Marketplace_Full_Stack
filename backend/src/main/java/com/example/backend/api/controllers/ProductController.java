@@ -13,7 +13,7 @@ public class ProductController {
     private final ProductService productService;
 
     private static final String CREATE_PRODUCT = "/create/product";
-    private static final String GET_PRODUCTS = "/get/product";
+    private static final String GET_PRODUCTS = "/get/products";
     private static final String GET_ONE_PRODUCT = "/product/{id}";
     private static final String EDIT_ID_PRODUCT = "/edit/product/{id}";
     private static final String DELETE_PRODUCT = "delete/product/{id}";

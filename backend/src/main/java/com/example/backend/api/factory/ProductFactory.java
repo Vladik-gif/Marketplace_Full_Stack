@@ -12,6 +12,7 @@ public class ProductFactory {
 
         productDTO.setId(entity.getId());
         productDTO.setName(entity.getName());
+        productDTO.setCategory(entity.getCategory());
         productDTO.setSeller(entity.getSeller());
         productDTO.setNumber(entity.getNumber());
         productDTO.setPrice(entity.getPrice());
