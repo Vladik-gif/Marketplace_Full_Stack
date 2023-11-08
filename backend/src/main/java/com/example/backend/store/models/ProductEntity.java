@@ -14,6 +14,7 @@ public class ProductEntity {
     private String characteristic_product;
     private double price;
     //private String customer_reviews;
+    private String category;
     private String seller;
     private String number;
 
@@ -57,6 +58,14 @@ public class ProductEntity {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getSeller() {
