@@ -2,6 +2,8 @@ package com.example.backend.api.DTO;
 
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
+
 @Component
 public class ProductDTO {
     private Long id;
@@ -9,10 +11,11 @@ public class ProductDTO {
     private String description_product;
     private String characteristic_product;
     private double price;
-
     private String category;
     private String seller;
     private String number;
+
+    Instant createdAt = Instant.now();
 
     public ProductDTO() {
 
@@ -80,5 +83,13 @@ public class ProductDTO {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 }
