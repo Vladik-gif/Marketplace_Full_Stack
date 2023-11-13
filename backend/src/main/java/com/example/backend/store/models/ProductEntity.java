@@ -2,6 +2,8 @@ package com.example.backend.store.models;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
+
 @Entity
 @Table(name = "Product")
 public class ProductEntity {
@@ -17,6 +19,7 @@ public class ProductEntity {
     private String category;
     private String seller;
     private String number;
+    Instant createdAt = Instant.now();
 
     public ProductEntity() {}
 
@@ -82,5 +85,13 @@ public class ProductEntity {
 
     public void setNumber(String number) {
         this.number = number;
+    }
+
+    public Instant getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Instant createdAt) {
+        this.createdAt = createdAt;
     }
 }
