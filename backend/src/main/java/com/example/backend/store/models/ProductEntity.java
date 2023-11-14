@@ -3,6 +3,7 @@ package com.example.backend.store.models;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Product")
@@ -19,7 +20,7 @@ public class ProductEntity {
     private String category;
     private String seller;
     private String number;
-    private Instant createdAt = Instant.now();
+    private LocalDateTime createDate = LocalDateTime.now();
 
     public ProductEntity() {}
 
@@ -86,12 +87,11 @@ public class ProductEntity {
     public void setNumber(String number) {
         this.number = number;
     }
-
-    public Instant getCreatedAt() {
-        return createdAt;
+    public LocalDateTime getCreateDate() {
+        return createDate;
     }
 
-    public void setCreatedAt(Instant createdAt) {
-        this.createdAt = createdAt;
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
     }
 }
