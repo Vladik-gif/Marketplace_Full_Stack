@@ -18,7 +18,7 @@ public class ProductFactory {
         productDTO.setPrice(entity.getPrice());
         productDTO.setCharacteristic_product(entity.getCharacteristic_product());
         productDTO.setDescription_product(entity.getDescription_product());
-        productDTO.setCreatedAt(entity.getCreatedAt());
+        productDTO.setCreateDate(entity.getCreateDate());
 
         return productDTO;
     }

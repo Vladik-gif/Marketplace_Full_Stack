@@ -50,7 +50,6 @@ public class ProductService implements ProductServIceImpl {
         entity_update.setSeller(entity.getSeller());
         entity_update.setDescription_product(entity.getDescription_product());
         entity_update.setCharacteristic_product(entity.getCharacteristic_product());
-        entity_update.setCreatedAt(entity.getCreatedAt());
 
         return productFactory.makeProduct(productRepository.save(entity_update));
     }
