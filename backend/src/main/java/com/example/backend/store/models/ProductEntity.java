@@ -19,7 +19,7 @@ public class ProductEntity {
     private String category;
     private String seller;
     private String number;
-    Instant createdAt = Instant.now();
+    private Instant createdAt = Instant.now();
 
     public ProductEntity() {}
 
