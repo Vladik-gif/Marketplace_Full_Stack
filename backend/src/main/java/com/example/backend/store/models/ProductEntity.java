@@ -1,8 +1,6 @@
 package com.example.backend.store.models;
 
 import jakarta.persistence.*;
-
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity
