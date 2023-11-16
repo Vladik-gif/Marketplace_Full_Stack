@@ -1,6 +1,8 @@
 package com.example.backend.api.DTO;
 
 import org.springframework.stereotype.Component;
+
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Component
