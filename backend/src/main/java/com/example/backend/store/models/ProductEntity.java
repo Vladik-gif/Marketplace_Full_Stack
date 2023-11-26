@@ -1,19 +1,19 @@
 package com.example.backend.store.models;
 
 import jakarta.persistence.*;
-
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Product")
+@Table(name = "products")
 public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    @Column(columnDefinition = "TEXT")
     private String description_product;
+    @Column(columnDefinition = "TEXT")
     private String characteristic_product;
     private double price;
     //private String customer_reviews;
