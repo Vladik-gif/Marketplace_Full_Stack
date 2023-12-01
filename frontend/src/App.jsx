@@ -1,44 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Routes, Route } from 'react-router-dom';
 
-function App() {
-   const [count, setCount] = useState(0)
-   const takeDate = () => {
-      fetch('https://swapi.dev/api/people/1/')
-         .then((response) => {
-            console.log(response.json());
-         })
-         .then((data) => {
-            console.log(data);
-         });
-   }
+import MainLayout from './components/MainLayout/MainLayout.jsx';
+import Home from './pages/Home/Home.jsx';
+import Login from './pages/Login/Login.jsx';
+import Register from './pages/Register/Register.jsx';
+import SecondPage from './pages/SecondPage/SecondPage.jsx';
 
-   return (
-      <>
-         <div>
-            <a href="https://vitejs.dev" target="_blank">
-               <img src={viteLogo} className="logo" alt="Vite logo" />
-            </a>
-            <a href="https://react.dev" target="_blank">
-               <img src={reactLogo} className="logo react" alt="React logo" />
-            </a>
-         </div>
-         <h1 onClick={takeDate}>Vite + React</h1>
-         <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-               count is {count}
-            </button>
-            <p>
-               Edit <code>src/App.jsx</code> and save to test HMR
-            </p>
-         </div>
-         <p className="read-the-docs">
-            Click on the Vite and React logos to learn more
-         </p>
-      </>
-   )
-}
+const App = () => {
+  return (
+    <Routes>
+      <Route path="" element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/mobile" element={<SecondPage />} />
+        <Route path="/desktop" element={<SecondPage />} />
+        <Route path="/foto" element={<SecondPage />} />
+        <Route path="/tv" element={<SecondPage />} />
+        <Route path="/audio" element={<SecondPage />} />
+        <Route path="/game" element={<SecondPage />} />
+        <Route path="/tablet" element={<SecondPage />} />
+        <Route path="/laptop" element={<SecondPage />} />
+        <Route path="/home" element={<SecondPage />} />
+        <Route path="/kitchen" element={<SecondPage />} />
+        <Route path="/climate" element={<SecondPage />} />
+        <Route path="/other" element={<SecondPage />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+    </Routes>
+  );
+};
 
-export default App
+export default App;
