@@ -1,0 +1,11 @@
+.prev__arrow {
+  left: 5px;
+  z-index: 3;
+}
+
+.custom__prev__arrow::before {
+  content: '\276E';
+  color: white;
+  font-size: 50px;
+  font-weight: 800;
+}

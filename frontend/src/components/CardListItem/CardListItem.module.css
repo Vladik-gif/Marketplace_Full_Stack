@@ -1,0 +1,25 @@
+.card__container {
+  /* box-sizing: content-box;
+  padding: 10px;
+  border-radius: 10px; */
+
+  /* border-left: 10px solid var(--color-card-border);
+  border-right: 10px solid var(--color-card-border);
+  border-top: 10px solid var(--color-card-border);
+  border-bottom: 10px solid var(--color-card-border); */
+
+  border: solid 5px black;
+  border-radius: 10px;
+
+  width: 160px;
+  height: 240px;
+}
+
+.card__container1 {
+  width: 150px;
+  height: 145px;
+  border: solid 5px black;
+}
+
+.card__container2 {
+}

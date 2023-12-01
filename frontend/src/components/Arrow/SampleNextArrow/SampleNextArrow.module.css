@@ -1,0 +1,11 @@
+.next__arrow {
+  right: 5px;
+  z-index: 3;
+}
+
+.custom__next__arrow::before {
+  content: '\276F';
+  color: white;
+  font-size: 50px;
+  font-weight: 800;
+}

@@ -1,0 +1,45 @@
+.buttonLang__container {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttonLang {
+  margin-left: 5px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+
+  font-family: 'Montserrat';
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.buttonLang:hover {
+  color: black;
+}
+
+.buttonLang__border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #797878;
+}
+
+.buttonLang__active {
+  color: rgba(188, 230, 254, 1);
+  cursor: auto;
+}
+
+.buttonLang__img {
+  display: block;
+  margin-right: 5px;
+  width: 20px;
+  height: 20px;
+}

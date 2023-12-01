@@ -1,0 +1,16 @@
+.product_card {
+  width: 250px;
+  height: var(--height-full-scrin);
+  background-color: aquamarine;
+  border-radius: 20px;
+  padding: 5px;
+}
+
+.img_product {
+   width: 100%;
+   border-radius: 20px;
+}
+
+.name_product .price_product {
+   font-size: 20px;
+}
