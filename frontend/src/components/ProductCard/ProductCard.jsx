@@ -1,5 +1,4 @@
 import styles from './ProductCard.module.css';
-
 import TestGoods from '../../assets/imges/TestGoods.jpg';
 
 const ProductCard = () => {
@@ -22,4 +21,5 @@ const ProductCard = () => {
       </div>
    );
 };
+
 export default ProductCard;
