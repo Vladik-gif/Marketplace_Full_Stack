@@ -3,7 +3,7 @@ import TestGoods from '../../assets/imges/TestGoods.jpg';
 
 const ProductCard = () => {
    const takeDate = () => {
-      fetch('http://localhost:8080/get/products')
+      fetch("http://localhost:8080/get/products")
          .then((response) => {
             return response.json();
          })
