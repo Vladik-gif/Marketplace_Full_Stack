@@ -10,22 +10,25 @@ function FormTest() {
    const ref5 = useRef();
    const ref6 = useRef();
    const ref7 = useRef();
+   const ref8 = useRef();
 
-   const putDate = (event) => {
+   const putDate = () => {
+      // event.preventDefault();
       const date = {
          name: ref1.current.value,
          description_product: ref2.current.value,
          characteristic_product: ref3.current.value,
-         price: ref4.current.value,
+         price: Number(ref4.current.value),
          category: ref5.current.value,
          seller: ref6.current.value,
          number: ref7.current.value,
+         image: ref8.current.value,
       }
 
       fetch("http://localhost:8080/create/product", {
          method: 'POST',
          headers: { 'Content-Type': 'application/json' },
-         body: JSON.stringify(data),
+         body: JSON.stringify(date),
       }).then(response => {
          // Перевіряємо, чи отримали успішну відповідь (HTTP-статус 200-299)
          if (!response.ok) {
@@ -33,14 +36,13 @@ function FormTest() {
          }
          // Розпаковуємо JSON з відповіді
          return response.json();
-      }).then(data => {
+      }).then(datas => {
          // Обробляємо отримані дані
-         console.log('Response data:', data);
+         console.log('Response data:', datas);
       }).catch(error => {
          // Обробляємо помилки
          console.error('Error:', error);
       });
-      // event.preventDefault();
    }
 
    return (
@@ -52,7 +54,8 @@ function FormTest() {
          <label>category               <input type="text" name="category" ref={ref5} /></label>
          <label>seller                 <input type="text" name="seller" ref={ref6} /></label>
          <label>number                 <input type="text" name="number" ref={ref7} /></label>
-         <input type="submit" onClick={putDate} />
+         <label>image                 <input type="file" name="image" accept="image/jpeg, image/png" ref={ref8} /></label>
+         <input type="submit" onClick={putDate} value="Submit" />
       </form>
    )
 }
