@@ -1,8 +1,8 @@
-import styles from "./FormTest.module.css";
+import styles from "./FormForTestWithImage.module.css";
 
 import { useRef } from "react";
 
-function FormTest() {
+function FormForTestWithImage() {
    const ref1 = useRef();
    const ref2 = useRef();
    const ref3 = useRef();
@@ -10,6 +10,7 @@ function FormTest() {
    const ref5 = useRef();
    const ref6 = useRef();
    const ref7 = useRef();
+   const ref8 = useRef();
 
    const putDate = () => {
       // event.preventDefault();
@@ -21,6 +22,7 @@ function FormTest() {
          category: ref5.current.value,
          seller: ref6.current.value,
          number: ref7.current.value,
+         image: ref8.current.value,
       }
 
       fetch("http://localhost:8080/create/product", {
@@ -52,9 +54,10 @@ function FormTest() {
          <label>category               <input type="text" name="category" ref={ref5} /></label>
          <label>seller                 <input type="text" name="seller" ref={ref6} /></label>
          <label>number                 <input type="text" name="number" ref={ref7} /></label>
+         <label>image                 <input type="file" name="image" accept="image/jpeg, image/png" ref={ref8} /></label>
          <input type="submit" onClick={putDate} value="Submit" />
       </form>
    )
 }
 
-export default FormTest;
+export default FormForTestWithImage;
