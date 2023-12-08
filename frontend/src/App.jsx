@@ -8,6 +8,7 @@ import SecondPage from './pages/SecondPage/SecondPage.jsx';
 
 //
 import FormTest from './components/FormForTest/FormTest.jsx';
+import FormForTestWithImage from './components/FormForTestWithImage/FormForTestWithImage.jsx';
 //
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
          <Route path="/register" element={<Register />} />
          {/* // */}
          <Route path="/form" element={<FormTest />} />
+         <Route path="/formImage" element={<FormForTestWithImage />} />
       </Routes>
    );
 };
