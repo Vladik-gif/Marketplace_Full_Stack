@@ -1,20 +1,18 @@
+import { NavLink } from 'react-router-dom';
 import styles from './CardListItem.module.css';
 
-const CardListItem = ({ id, name, image }) => {
-  console.log(id, name, image);
+const CardListItem = ({ name, image }) => {
   return (
     <>
-      <div>
-        <div className={styles.card__container}>
-          <div className={styles.card__container1}>
-            <p>Картинка</p>
-          </div>
-
-          <div className={styles.card__container2}>
-            <p>Товар</p>
-          </div>
+      <NavLink className={styles.card}>
+        <div className={styles.card__containerFirst}>
+          <img className={styles.card__image} src={image} />
         </div>
-      </div>
+
+        <div className={styles.card__containerSecond}>
+          <p className={styles.card__title}>{name}</p>
+        </div>
+      </NavLink>
     </>
   );
 };

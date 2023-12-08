@@ -59,7 +59,7 @@ const SideBar = () => {
             }
           >
             <VideocamIcon className={styles.sideBar__icon} />
-            ТВ та Відеотехніка
+            ТВ та відеотехніка
           </NavLink>
         </li>
         <li className={styles.sideBar__item}>
