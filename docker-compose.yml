@@ -9,9 +9,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: marketplace
+      PGDATA: "/var/lib/postgresql/data/pgdata"
     ports:
       - "5432:5432"
     volumes:
+      - ../2. Init Database:/docker-entrypoint-initdb.d
       - local:/var/lib/postgresql/data
 
   backend-api:
@@ -35,7 +37,7 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     ports:
-      - '5173:5173'
+      - '3000:3000'
     depends_on:
       - backend-api
 
