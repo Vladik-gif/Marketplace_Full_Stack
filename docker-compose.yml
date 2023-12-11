@@ -51,6 +51,15 @@ services:
     volumes:
       - pgadmin_backend:/var/lib/pgadmin
 
+  RabbitMQ:
+    image: rabbitmq:3-management-alpine
+    environment:
+      RABBITMQ_DEFAULT_USER: USER
+      RABBITMQ_DEFAULT_PASS: password
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
 volumes:
   local:
   pgadmin_backend:
