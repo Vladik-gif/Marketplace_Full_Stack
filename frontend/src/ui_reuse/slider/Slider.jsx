@@ -25,10 +25,10 @@ const Slider = (props) => {
             </div>
             <div className="glide__arrows" data-glide-el="controls">
                <ArrowBackIosNewRoundedIcon
-                  className={`glide__arrow glide__arrow--left ${styles.arrow} ${styles.arrow_left}`} data-glide-dir=">"
+                  className={`glide__arrow glide__arrow--left ${styles.arrow} ${styles.arrow_left}`} data-glide-dir="<"
                   fontSize='string' />
                <ArrowBackIosNewRoundedIcon
-                  className={`glide__arrow glide__arrow--right ${styles.arrow} ${styles.arrow_right}`} data-glide-dir="<"
+                  className={`glide__arrow glide__arrow--right ${styles.arrow} ${styles.arrow_right}`} data-glide-dir=">"
                   fontSize='string' />
             </div>
          </div>
