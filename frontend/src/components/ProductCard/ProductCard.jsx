@@ -5,8 +5,9 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 
 const ProductCard = () => {
-   const takeDate = () => {
-      fetch("http://localhost:8080/get/products")
+   const takeDate = (event) => {
+      console.log("lol");
+      fetch("https://swapi.dev/api/people/1")
          .then((response) => {
             return response.json();
          })
