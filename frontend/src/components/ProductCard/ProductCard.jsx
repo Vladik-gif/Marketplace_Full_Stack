@@ -1,13 +1,13 @@
 import styles from './ProductCard.module.css';
+
 import TestGoods from '../../assets/imges/TestGoods.png';
 
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 
 const ProductCard = () => {
-   const takeDate = (event) => {
-      console.log("lol");
-      fetch("https://swapi.dev/api/people/1")
+   const takeDate = () => {
+      fetch("http://localhost:8080/get/products")
          .then((response) => {
             return response.json();
          })
