@@ -11,7 +11,7 @@ const Home = () => {
          <SideBar />
          <CustomArrows />
       </div>
-      <Slider settings={{ type: 'carousel', startAt: 0, perView: 5 }}
+      <Slider settings={{ type: 'carousel', startAt: 0, perView: 4, gap: 100 }}
          title="Новинки"
          slideSArray={[<ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />]} />
    </>

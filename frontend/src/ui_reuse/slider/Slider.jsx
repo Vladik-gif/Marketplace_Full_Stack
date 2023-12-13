@@ -20,15 +20,15 @@ const Slider = (props) => {
             <div className={styles.title}>{props.title}</div>
             <div className="glide__track" data-glide-el="track">
                <ul className="glide__slides">
-                  {props.slideSArray.map(e => <li className="glide__slide" key={props.slideSArray.indexOf(e)}>{e}</li>)}
+                  {props.slideSArray.map((e, index) => <li className="glide__slide" key={index}>{e}</li>)}
                </ul>
             </div>
             <div className="glide__arrows" data-glide-el="controls">
                <ArrowBackIosNewRoundedIcon
-                  className={`glide__arrow glide__arrow--left ${styles.arrow} ${styles.arrow_left}`} data-glide-dir=">"
+                  className={`glide__arrow glide__arrow--left ${styles.arrow} ${styles.arrow_left}`} data-glide-dir="<"
                   fontSize='string' />
                <ArrowBackIosNewRoundedIcon
-                  className={`glide__arrow glide__arrow--right ${styles.arrow} ${styles.arrow_right}`} data-glide-dir="<"
+                  className={`glide__arrow glide__arrow--right ${styles.arrow} ${styles.arrow_right}`} data-glide-dir=">"
                   fontSize='string' />
             </div>
          </div>
