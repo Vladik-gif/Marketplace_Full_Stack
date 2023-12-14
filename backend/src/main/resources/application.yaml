@@ -1,7 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres #localhost
-#    url: jdbc:postgresql://db_backend:5432/marketplace
+    url: jdbc:postgresql://localhost:5434/marketplace
     username: postgres
     password: postgres
     driver-class-name: org.postgresql.Driver
