@@ -19,6 +19,7 @@ public class ProductFactory {
         productDTO.setCharacteristic_product(entity.getCharacteristic_product());
         productDTO.setDescription_product(entity.getDescription_product());
         productDTO.setCreateDate(entity.getCreateDate());
+        productDTO.setImageFiles(entity.getImageFiles());
 
         return productDTO;
     }

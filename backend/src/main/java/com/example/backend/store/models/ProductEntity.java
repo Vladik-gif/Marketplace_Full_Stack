@@ -2,6 +2,7 @@ package com.example.backend.store.models;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -21,6 +22,9 @@ public class ProductEntity {
     private String seller;
     private String number;
     private LocalDateTime createDate = LocalDateTime.now();
+    @ManyToOne
+    @JoinColumn(name = "image_id")
+    private ImageFile imageFiles;
 
     public ProductEntity() {}
 
@@ -93,5 +97,13 @@ public class ProductEntity {
 
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
+    }
+
+    public ImageFile getImageFiles() {
+        return imageFiles;
+    }
+
+    public void setImageFiles(ImageFile imageFiles) {
+        this.imageFiles = imageFiles;
     }
 }

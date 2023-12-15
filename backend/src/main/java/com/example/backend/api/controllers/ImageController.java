@@ -39,11 +39,6 @@ public class ImageController {
                 .body(imageData);
     }
 
-    @PutMapping
-    public ResponseEntity<?> editImage(@RequestParam MultipartFile image, @PathVariable String name){
-        return null; //розробляється
-    }
-
     @DeleteMapping(DELETE_IMAGE_ID)
     public void deleteIdImage(@PathVariable Long id){
         imageService.deleteIdImage(id);

@@ -12,13 +12,10 @@ public class ImageFile {
     private Long id;
     private String name;
     private String type;
-
     @Lob
     @Column(name = "image", length = 10000)
     private byte[] image;
-
-    public ImageFile() {
-    }
+    public ImageFile() {}
 
     public Long getId() {
         return id;
