@@ -46,12 +46,6 @@ public class ImageService implements ImageFileServiceImpl {
     }
 
     @Override
-    public byte[] editLoadImage(MultipartFile image, String name) {
-
-        return new byte[0];
-    }
-
-    @Override
     public void deleteIdImage(Long id) {
         imageFileRepository.deleteById(id);
     }
