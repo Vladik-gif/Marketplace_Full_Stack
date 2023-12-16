@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
-import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
 function Footer() {
 
@@ -36,7 +36,7 @@ function Footer() {
                <span>techhaven@gmail.com</span>
             </div>
             <div className={styles.delivery}>
-               <AirportShuttleIcon className={styles.icon} fontSize="string" />
+               <LocalShippingIcon className={styles.icon} fontSize="string" />
                <span>Доставка: Укр. Пошта, Нова Пошта</span>
             </div>
          </div>
