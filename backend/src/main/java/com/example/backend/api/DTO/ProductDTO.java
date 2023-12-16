@@ -1,8 +1,8 @@
 package com.example.backend.api.DTO;
 
+import com.example.backend.store.models.GalleryEntity;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Component
@@ -16,9 +16,9 @@ public class ProductDTO {
     private String seller;
     private String number;
     private LocalDateTime createDate = LocalDateTime.now();
-    public ProductDTO() {
+    private GalleryEntity gallery;
 
-    }
+    public ProductDTO() {}
 
     public Long getId() {
         return id;
@@ -89,5 +89,13 @@ public class ProductDTO {
 
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
+    }
+
+    public GalleryEntity getGallery() {
+        return gallery;
+    }
+
+    public void setGallery(GalleryEntity gallery) {
+        this.gallery = gallery;
     }
 }

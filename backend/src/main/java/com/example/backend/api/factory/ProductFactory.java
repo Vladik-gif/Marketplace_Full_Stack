@@ -7,10 +7,17 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProductFactory {
 
+    private final GalleryFactory galleryFactory;
+
+    public ProductFactory(GalleryFactory galleryFactory) {
+        this.galleryFactory = galleryFactory;
+    }
+
+
     public ProductDTO makeProduct(ProductEntity entity){
         ProductDTO productDTO = new ProductDTO();
 
-        productDTO.setId(entity.getId());
+        productDTO.setId(entity.getProductId());
         productDTO.setName(entity.getName());
         productDTO.setCategory(entity.getCategory());
         productDTO.setSeller(entity.getSeller());
@@ -19,6 +26,7 @@ public class ProductFactory {
         productDTO.setCharacteristic_product(entity.getCharacteristic_product());
         productDTO.setDescription_product(entity.getDescription_product());
         productDTO.setCreateDate(entity.getCreateDate());
+        productDTO.setGallery(entity.getGallery());
 
         return productDTO;
     }
