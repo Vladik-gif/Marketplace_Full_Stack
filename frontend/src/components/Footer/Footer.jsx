@@ -16,9 +16,9 @@ function Footer() {
          <div className={`${styles.container} width_limiter`} >
             <div className={styles.social_networks}>
                <img src={logo} alt="Logo" />
-               <InstagramIcon className={styles.icon} fontSize="string" />
-               <TelegramIcon className={styles.icon} fontSize="string" />
-               <FacebookIcon className={styles.icon} fontSize="string" />
+               <a href="https://www.instagram.com/"><InstagramIcon className={styles.icon} fontSize="string" /></a>
+               <a href="https://web.telegram.org/"><TelegramIcon className={styles.icon} fontSize="string" /></a>
+               <a href="https://www.facebook.com/"><FacebookIcon className={styles.icon} fontSize="string" /></a>
             </div>
             <div className={styles.call_center}>
                <LocalPhoneOutlinedIcon className={styles.icon} fontSize="string" />
