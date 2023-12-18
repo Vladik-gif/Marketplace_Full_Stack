@@ -1,12 +1,14 @@
 package com.example.backend.api.DTO;
 
+import com.example.backend.store.models.PhotoEntity;
+
 import java.util.List;
 
 public class GalleryDTO {
 
     private Long galleryId;
 
-    private List<PhotoDTO> photos;
+    private PhotoEntity photos;
 
     public GalleryDTO() {}
 
@@ -18,11 +20,11 @@ public class GalleryDTO {
         this.galleryId = galleryId;
     }
 
-    public List<PhotoDTO> getPhotos() {
+    public PhotoEntity getPhotos() {
         return photos;
     }
 
-    public void setPhotos(List<PhotoDTO> photos) {
+    public void setPhotos(PhotoEntity photos) {
         this.photos = photos;
     }
 }
