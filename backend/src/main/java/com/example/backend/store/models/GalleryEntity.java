@@ -14,17 +14,15 @@ public class GalleryEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "gallery_id")
     private Long galleryId;
+    @ManyToOne
+    private PhotoEntity photos;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "photo_id", referencedColumnName = "gallery_id")
-    private List<PhotoEntity> photos = new ArrayList<>();
-
-    public void addPhoto(PhotoEntity photo){
-        if (photos==null){
-                photos = new ArrayList<>();
-                    photos.add(photo);
-        }
-    }
+//    public void addPhoto(PhotoEntity photo){
+//        if (photos==null){
+//                photos = new ArrayList<>();
+//                    photos.add(photo);
+//        }
+//    }
 
     public GalleryEntity() {}
 
@@ -36,11 +34,11 @@ public class GalleryEntity {
         this.galleryId = galleryId;
     }
 
-    public List<PhotoEntity> getPhotos() {
+    public PhotoEntity getPhotos() {
         return photos;
     }
 
-    public void setPhotos(List<PhotoEntity> photos) {
+    public void setPhotos(PhotoEntity photos) {
         this.photos = photos;
     }
 }

@@ -19,9 +19,7 @@ public class GalleryFactory {
         GalleryDTO galleryDTO = new GalleryDTO();
 
         galleryDTO.setGalleryId(gallery.getGalleryId());
-        galleryDTO.setPhotos(gallery.getPhotos().stream()
-                .map(photoFactory::makePhoto)
-                .collect(Collectors.toList()));
+        galleryDTO.setPhotos(gallery.getPhotos());
 
         return galleryDTO;
     }
