@@ -17,6 +17,9 @@ public class ImageFile {
     @Column(name = "image", length = 10000)
     private byte[] image;
 
+    @ManyToOne
+    private ProductEntity product;
+
     public ImageFile() {
     }
 
@@ -50,5 +53,13 @@ public class ImageFile {
 
     public void setImage(byte[] image) {
         this.image = image;
+    }
+
+    public ProductEntity getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductEntity product) {
+        this.product = product;
     }
 }
