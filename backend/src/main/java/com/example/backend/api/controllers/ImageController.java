@@ -13,9 +13,8 @@ import java.io.IOException;
 public class ImageController {
 
     private final ImageService imageService;
-    private static final String CREATE_IMAGE = "/image";
+    private static final String CREATE_IMAGE = "/{id}/image";
     private static final String GET_IMAGE_NAME = "/{name}";
-    private static final String EDIT_IMAGE_ID = "/edit/image/id"; //URL не працює
     private static final String DELETE_IMAGE_ID = "/delete/image/{id}";
 
     public ImageController(ImageService imageService) {
@@ -23,8 +22,8 @@ public class ImageController {
     }
 
     @PostMapping(CREATE_IMAGE)
-    public ResponseEntity<?> create(@RequestParam MultipartFile image) throws IOException {
-        String uploadImage = imageService.uploadImage(image);
+    public ResponseEntity<?> create(@PathVariable Long id, @ModelAttribute MultipartFile image) throws IOException {
+        String uploadImage = imageService.uploadImage(id,image);
 
         return ResponseEntity.status(HttpStatus.OK).body(uploadImage);
     }
@@ -37,11 +36,6 @@ public class ImageController {
                 .status(HttpStatus.OK)
                 .contentType(MediaType.valueOf("image/png"))
                 .body(imageData);
-    }
-
-    @PutMapping
-    public ResponseEntity<?> editImage(@RequestParam MultipartFile image, @PathVariable String name){
-        return null; //розробляється
     }
 
     @DeleteMapping(DELETE_IMAGE_ID)

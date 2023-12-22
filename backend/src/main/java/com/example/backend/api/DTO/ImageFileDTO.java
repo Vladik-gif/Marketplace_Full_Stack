@@ -10,8 +10,7 @@ public class ImageFileDTO {
     private String type;
     private byte[] image;
 
-    public ImageFileDTO() {
-    }
+    public ImageFileDTO() {}
 
     public Long getId() {
         return id;

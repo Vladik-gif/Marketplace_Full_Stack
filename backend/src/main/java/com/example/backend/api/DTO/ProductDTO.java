@@ -1,9 +1,11 @@
 package com.example.backend.api.DTO;
 
+import com.example.backend.store.models.ImageFile;
 import org.springframework.stereotype.Component;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Component
 public class ProductDTO {
@@ -16,9 +18,8 @@ public class ProductDTO {
     private String seller;
     private String number;
     private LocalDateTime createDate = LocalDateTime.now();
-    public ProductDTO() {
-
-    }
+    private List<ImageFileDTO> image;
+    public ProductDTO() {}
 
     public Long getId() {
         return id;
@@ -89,5 +90,13 @@ public class ProductDTO {
 
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
+    }
+
+    public List<ImageFileDTO> getImage() {
+        return image;
+    }
+
+    public void setImage(List<ImageFileDTO> image) {
+        this.image = image;
     }
 }
