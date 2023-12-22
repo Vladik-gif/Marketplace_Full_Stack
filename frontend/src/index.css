@@ -25,6 +25,8 @@
   --color-card-border: rgba(194, 211, 243, 1);
   --color-border-card: #c2d3f3;
   --color-hover-card: #6093ee;
+  --color-card-icon: #254499;
+  --color-btn-text: #ffffff;
 }
 
 body {

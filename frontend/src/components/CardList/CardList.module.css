@@ -1,7 +1,7 @@
 .cardList {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 стовпців */
-  grid-template-rows: repeat(2, 1fr); /* 2 рядки */
-  grid-row-gap: 36px; /* більший відступ між рядками */
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-row-gap: 36px;
   grid-column-gap: 28px;
 }
