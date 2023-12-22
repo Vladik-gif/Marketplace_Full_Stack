@@ -48,12 +48,11 @@ function FormForTestWithImage() {
    return (
       <form className={styles.form_test}>
          <label>name                   <input type="text" name="name" ref={ref1} /></label>
-         <label>description_product    <input type="text" name="description_product" ref={ref2} /></label>
          <label>characteristic_product <input type="text" name="characteristic_product" ref={ref3} /></label>
-         <label>price                  <input type="text" name="price" ref={ref4} /></label>
+         <label>price                  <input type="number" name="price" ref={ref4} /></label>
          <label>category               <input type="text" name="category" ref={ref5} /></label>
          <label>seller                 <input type="text" name="seller" ref={ref6} /></label>
-         <label>number                 <input type="text" name="number" ref={ref7} /></label>
+         <label>number                 <input type="tel" name="number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="xxx-xxx-xxxx" ref={ref7} /></label>
          <label>image                 <input type="file" name="image" accept="image/jpeg, image/png" ref={ref8} /></label>
          <input type="submit" onClick={putDate} value="Submit" />
       </form>
