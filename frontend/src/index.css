@@ -23,6 +23,10 @@
   --color-hover-link: black;
   --color-active-link: rgba(182, 247, 251, 1);
   --color-card-border: rgba(194, 211, 243, 1);
+  --color-border-card: #c2d3f3;
+  --color-hover-card: #6093ee;
+  --color-card-icon: #254499;
+  --color-btn-text: #ffffff;
 }
 
 body {

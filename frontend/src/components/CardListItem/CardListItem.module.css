@@ -1,25 +1,52 @@
-.card__container {
-  /* box-sizing: content-box;
-  padding: 10px;
-  border-radius: 10px; */
-
-  /* border-left: 10px solid var(--color-card-border);
-  border-right: 10px solid var(--color-card-border);
-  border-top: 10px solid var(--color-card-border);
-  border-bottom: 10px solid var(--color-card-border); */
-
-  border: solid 5px black;
-  border-radius: 10px;
-
+.card {
   width: 160px;
   height: 240px;
+  padding: 13px 10px 12px 10px;
+  border-radius: 10px;
+
+  background-color: var(--color-border-card);
+
+  &:hover,
+  :focus {
+    background-color: var(--color-hover-card);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 
-.card__container1 {
-  width: 150px;
+.card__containerFirst {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 140px;
   height: 145px;
-  border: solid 5px black;
 }
 
-.card__container2 {
+.card__image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.card__containerSecond {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 140px;
+  height: 60px;
+  padding: 10px 10px 12px 10px;
+  margin-top: 10px;
+
+  background-color: white;
+  border-radius: 10px;
+}
+
+.card__title {
+  text-align: center;
+
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
 }
