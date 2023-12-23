@@ -23,9 +23,8 @@ public class ProductEntity {
     private String seller; //version 2.0
     private String number; //seller
     private LocalDateTime createDate = LocalDateTime.now();
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "gallery_id", referencedColumnName = "gallery_id")
-    private GalleryEntity gallery;
+    @OneToMany
+    private List<ImageFile> image;
 
     public ProductEntity() {}
 
@@ -99,11 +98,11 @@ public class ProductEntity {
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
-    public GalleryEntity getGallery() {
-        return gallery;
+     public List<ImageFile> getImage() {
+        return image;
     }
 
-    public void setGallery(GalleryEntity gallery) {
-        this.gallery = gallery;
+    public void setImage(List<ImageFile> image) {
+        this.image = image;
     }
 }
