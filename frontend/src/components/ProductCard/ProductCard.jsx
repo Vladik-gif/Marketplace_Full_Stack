@@ -8,7 +8,7 @@ import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 import useFetch from '../../hooks/useFetch';
 
 const ProductCard = () => {
-   const dates = useFetch("http://localhost:8080/get/products");
+   // const dates = useFetch("http://localhost:8080/get/products");
 
    const takeDate = () => {
       console.log(dates);

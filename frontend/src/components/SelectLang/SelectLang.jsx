@@ -1,49 +1,51 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+
 import React from 'react';
+
 import styles from './SelectLang.module.css';
-import Ua from '../../assets/svg/UA.svg';
-import Us from '../../assets/svg/US.svg';
+import UA from '../../assets/svg/UA.svg';
+import US from '../../assets/svg/US.svg';
 
 const SelectLang = () => {
-  const [activeButton, setActiveButton] = useState(1);
+   const [heightUp, setHeightUp] = useState(36);
+   const [togle, setTogle] = useState(false);
 
-  const activateButton = buttonNumber => {
-    setActiveButton(buttonNumber);
-  };
+   const [ua, setUa] = useState("UA");
+   const [us, setUs] = useState("US");
 
-  useEffect(() => {
-    const buttons = document.querySelectorAll(`.${styles.buttonLang}`);
-    buttons.forEach((button, index) => {
-      if (index + 1 === activeButton) {
-        button.classList.add(styles.buttonLang__active);
+   const showLanguage = () => {
+      if (togle) {
+         setHeightUp((up) => up - 25);
+         setTogle(!togle);
       } else {
-        button.classList.remove(styles.buttonLang__active);
+         setHeightUp((up) => up + 25);
+         setTogle(!togle);
       }
-    });
-  }, [activeButton]);
+   }
 
-  return (
-    <div className={styles.buttonLang__container}>
-      {[1, 2].map(buttonNumber => (
-        <React.Fragment key={buttonNumber}>
-          {buttonNumber > 1 && <span className={styles.buttonLang__border}>|</span>}
-          <button
-            className={`${styles.buttonLang} ${
-              activeButton === buttonNumber ? styles.buttonLang__active : ''
-            }`}
-            onClick={() => activateButton(buttonNumber)}
-          >
-            <img
-              className={styles.buttonLang__img}
-              src={buttonNumber === 1 ? Ua : Us}
-              alt="прапор"
-            />
-            {buttonNumber === 1 ? 'UA' : 'US'}
-          </button>
-        </React.Fragment>
-      ))}
-    </div>
-  );
+   const changeLanguage = (event) => {
+      if (event.target.id === "US") {
+         setUa(us);
+         setUs(ua);
+      }
+   };
+
+   return (
+      <div className={styles.container}>
+         <div className={styles.buttonLang__container} id='len' onClick={showLanguage}
+            style={{ height: heightUp }}>
+            <div className={styles.buttonLang__language} id='UA' onClick={changeLanguage}>
+               <img src={UA} alt={ua} className={styles.buttonLang__flag} />
+               <span className={styles.buttonLang__text}>{ua}</span>
+            </div>
+            <div className={styles.buttonLang__language} id='US' onClick={changeLanguage}>
+               <img src={US} alt={us} className={styles.buttonLang__flag} />
+               <span className={styles.buttonLang__text}>{us}</span>
+            </div>
+         </div>
+      </div>
+   );
 };
 
 export default SelectLang;
+

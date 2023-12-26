@@ -1,45 +1,29 @@
+.container{
+   width: 70px;
+   height: 36px;
+}
+
 .buttonLang__container {
-  display: flex;
-  flex-direction: row;
+   width: 70px;
+   height: 36px;
+   overflow: hidden;
+   background: #FFFFFF;
+   border-radius: 10px;
 }
 
-.buttonLang {
-  margin-left: 5px;
-  margin-right: 5px;
-  display: flex;
-  flex-direction: row;
-  border: none;
-  justify-content: center;
-  align-items: center;
-
-  background-color: transparent;
-
-  font-family: 'Montserrat';
-  color: white;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 24px;
+.buttonLang__language {
+   display: flex;
+   margin: 10px 0 10px 7px;
+   cursor: pointer;
 }
 
-.buttonLang:hover {
-  color: black;
+.buttonLang__flag{
+   width: 20px;
+   height: 17px;
 }
 
-.buttonLang__border {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #797878;
-}
-
-.buttonLang__active {
-  color: rgba(188, 230, 254, 1);
-  cursor: auto;
-}
-
-.buttonLang__img {
-  display: block;
-  margin-right: 5px;
-  width: 20px;
-  height: 20px;
+.buttonLang__text{
+   font-size: 20px;
+   font-weight: 600;
+   margin-left: 3px;
 }
