@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import React from 'react';
 
@@ -10,38 +10,31 @@ const SelectLang = () => {
    const [heightUp, setHeightUp] = useState(36);
    const [togle, setTogle] = useState(false);
 
-   const [ua, setUa] = useState("UA");
-   const [us, setUs] = useState("US");
+   const [language, setLanguage] = useState(["UA", "US"]);
 
    const showLanguage = () => {
-      if (togle) {
-         setHeightUp((up) => up - 25);
-         setTogle(!togle);
-      } else {
-         setHeightUp((up) => up + 25);
-         setTogle(!togle);
-      }
+      setHeightUp((up) => (togle ? up - 25 : up + 25));
+      setTogle(!togle);
    }
 
-   const changeLanguage = (event) => {
-      if (event.target.id === "US") {
-         setUa(us);
-         setUs(ua);
-      }
-   };
+   useEffect(() => {
+      document.getElementById("UA").addEventListener("click", () => {
+         setLanguage(["UA", "US"]);
+      });
+
+      document.getElementById("US").addEventListener("click", () => {
+         setLanguage(["US", "UA"]);
+      });
+   }, [])
 
    return (
       <div className={styles.container}>
          <div className={styles.buttonLang__container} id='len' onClick={showLanguage}
             style={{ height: heightUp }}>
-            <div className={styles.buttonLang__language} id='UA' onClick={changeLanguage}>
-               <img src={UA} alt={ua} className={styles.buttonLang__flag} />
-               <span className={styles.buttonLang__text}>{ua}</span>
-            </div>
-            <div className={styles.buttonLang__language} id='US' onClick={changeLanguage}>
-               <img src={US} alt={us} className={styles.buttonLang__flag} />
-               <span className={styles.buttonLang__text}>{us}</span>
-            </div>
+            {language.map((e, index) => <div className={styles.buttonLang__language} key={index} id={e}>
+               <img src={e === "UA" ? UA : US} alt={e} className={styles.buttonLang__flag} />
+               <span className={styles.buttonLang__text}>{e}</span>
+            </div>)}
          </div>
       </div>
    );
