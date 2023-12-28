@@ -3,19 +3,33 @@ import SideBar from '../../components/SideBar/SideBar';
 
 import CustomArrows from '../../components/Slide/Slide';
 import Slider from '../../ui_reuse/slider/Slider';
-import ProductCard from "../../components/ProductCard/ProductCard";
+import ProductCard from '../../components/ProductCard/ProductCard';
 
 const Home = () => {
-   return (<>
+  return (
+    <>
       <div className={styles.mainContainer}>
-         <SideBar />
-         <CustomArrows />
+        <SideBar />
+        <CustomArrows />
       </div>
-      <Slider settings={{ type: 'carousel', startAt: 0, perView: 5 }}
-         title="Новинки"
-         slideSArray={[<ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />, <ProductCard />]} />
-   </>
-   );
+      <Slider
+        settings={{ type: 'carousel', startAt: 0, perView: 4, gap: 100 }}
+        title="Новинки"
+        slideSArray={[
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+          <ProductCard />,
+        ]}
+      />
+    </>
+  );
 };
 
 export default Home;

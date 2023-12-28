@@ -23,8 +23,10 @@
 .arrow_right {
   right: -50px;
   transform: rotate(180deg);
+  cursor: pointer;
 }
 
 .arrow_left {
   left: -50px;
+  cursor: pointer;
 }

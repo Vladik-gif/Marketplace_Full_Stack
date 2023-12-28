@@ -9,7 +9,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 50px 10px 50px;
+  padding: 10px 0px 10px 0px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .logo {

@@ -20,7 +20,7 @@ const SideBar = () => {
       <ul className={styles.sideBar__list}>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/mobile"
+            to="/mobiles"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }
@@ -31,7 +31,7 @@ const SideBar = () => {
         </li>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/desktop"
+            to="/desktops"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }
@@ -53,13 +53,13 @@ const SideBar = () => {
         </li>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/tv"
+            to="/tvs"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }
           >
             <VideocamIcon className={styles.sideBar__icon} />
-            ТВ та Відеотехніка
+            ТВ та відеотехніка
           </NavLink>
         </li>
         <li className={styles.sideBar__item}>
@@ -75,7 +75,7 @@ const SideBar = () => {
         </li>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/game"
+            to="/games"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }
@@ -86,7 +86,7 @@ const SideBar = () => {
         </li>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/tablet"
+            to="/tablets"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }
@@ -97,7 +97,7 @@ const SideBar = () => {
         </li>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/laptop"
+            to="/laptops"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }
@@ -141,13 +141,13 @@ const SideBar = () => {
         </li>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/other"
+            to="/charging_stations"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }
           >
             <HourglassEmptyIcon className={styles.sideBar__icon} />
-            Інша електроніка
+            Зарядні станції
           </NavLink>
         </li>
       </ul>

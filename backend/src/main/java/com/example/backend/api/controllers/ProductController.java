@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
 
     private final ProductService productService;
@@ -16,8 +17,8 @@ public class ProductController {
     private static final String GET_PRODUCTS = "/get/products";
     private static final String GET_ONE_PRODUCT = "/product/{id}";
     private static final String EDIT_ID_PRODUCT = "/edit/product/{id}";
-    private static final String DELETE_PRODUCT = "delete/product/{id}";
-    private static final String DELETE_PRODUCTS_All = "delete/products";
+    private static final String DELETE_PRODUCT = "/delete/product/{id}";
+    private static final String DELETE_PRODUCTS_All = "/delete/products";
 
     public ProductController(ProductService productService) {
         this.productService = productService;

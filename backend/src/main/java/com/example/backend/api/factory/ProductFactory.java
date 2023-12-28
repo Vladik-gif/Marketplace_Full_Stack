@@ -4,8 +4,16 @@ import com.example.backend.api.DTO.ProductDTO;
 import com.example.backend.store.models.ProductEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.stream.Collectors;
+
 @Component
 public class ProductFactory {
+
+    private final ImageFileFactory imageFileFactory;
+
+    public ProductFactory(ImageFileFactory imageFileFactory) {
+        this.imageFileFactory = imageFileFactory;
+    }
 
     public ProductDTO makeProduct(ProductEntity entity){
         ProductDTO productDTO = new ProductDTO();
@@ -19,7 +27,9 @@ public class ProductFactory {
         productDTO.setCharacteristic_product(entity.getCharacteristic_product());
         productDTO.setDescription_product(entity.getDescription_product());
         productDTO.setCreateDate(entity.getCreateDate());
-
+        productDTO.setImage(entity.getImage().stream()
+                .map(imageFileFactory::makeImageFile)
+                .collect(Collectors.toList()));
         return productDTO;
     }
 }
