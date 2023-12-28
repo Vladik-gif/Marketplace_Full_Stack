@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import LocalPhoneOutlinedIcon from '@mui/icons-material/LocalPhoneOutlined';
-import AirportShuttleIcon from '@mui/icons-material/AirportShuttle';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 
 function Footer() {
 
@@ -16,9 +16,9 @@ function Footer() {
          <div className={`${styles.container} width_limiter`} >
             <div className={styles.social_networks}>
                <img src={logo} alt="Logo" />
-               <InstagramIcon className={styles.icon} fontSize="string" />
-               <TelegramIcon className={styles.icon} fontSize="string" />
-               <FacebookIcon className={styles.icon} fontSize="string" />
+               <a href="https://www.instagram.com/"><InstagramIcon className={styles.icon} fontSize="string" /></a>
+               <a href="https://web.telegram.org/"><TelegramIcon className={styles.icon} fontSize="string" /></a>
+               <a href="https://www.facebook.com/"><FacebookIcon className={styles.icon} fontSize="string" /></a>
             </div>
             <div className={styles.call_center}>
                <LocalPhoneOutlinedIcon className={styles.icon} fontSize="string" />
@@ -36,7 +36,7 @@ function Footer() {
                <span>techhaven@gmail.com</span>
             </div>
             <div className={styles.delivery}>
-               <AirportShuttleIcon className={styles.icon} fontSize="string" />
+               <LocalShippingIcon className={styles.icon} fontSize="string" />
                <span>Доставка: Укр. Пошта, Нова Пошта</span>
             </div>
          </div>
