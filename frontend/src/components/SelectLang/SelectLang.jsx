@@ -7,13 +7,10 @@ import US from '../../assets/svg/US.svg';
 const Languages = ['UA', 'US'];
 
 const SelectLang = () => {
-   const [heightUp, setHeightUp] = useState(36);
    const [toggle, setToggle] = useState(false);
-
    const [currentLang, setCurrentLang] = useState(Languages[0]);
 
    const showLanguage = () => {
-      setHeightUp(up => (toggle ? up - 25 : up + 25));
       setToggle(!toggle);
    };
 
@@ -23,25 +20,23 @@ const SelectLang = () => {
 
    return (
       <div className={styles.container}>
-         <div
-            className={styles.buttonLang__container}
-            id="len"
-            onClick={showLanguage}
-            style={{ height: heightUp }}
-         >
+         <ul className={styles.buttonLang__container} id="len" onClick={showLanguage}>
+            {/* Default lang */}
             {!toggle && (
-               <div className={styles.buttonLang__language}>
+               <li className={styles.buttonLang__language}>
                   <img
                      src={currentLang === 'UA' ? UA : US}
                      alt={currentLang}
                      className={styles.buttonLang__flag}
                   />
                   <span className={styles.buttonLang__text}>{currentLang}</span>
-               </div>
+               </li>
             )}
+
+            {/* Select lang list  */}
             {toggle &&
                Languages.sort(i => currentLang !== i).map((i, idx) => (
-                  <div
+                  <li
                      onClick={e => setLanguage(e)}
                      className={styles.buttonLang__language}
                      key={idx}
@@ -49,12 +44,11 @@ const SelectLang = () => {
                   >
                      <img src={i === 'UA' ? UA : US} alt={i} className={styles.buttonLang__flag} />
                      <span className={styles.buttonLang__text}>{i}</span>
-                  </div>
+                  </li>
                ))}
-         </div>
+         </ul>
       </div>
    );
 };
 
 export default SelectLang;
-
