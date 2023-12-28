@@ -1,32 +1,45 @@
-.container {
-  position: relative;
-  z-index: 1;
-  min-width: 70px;
-  min-height: 36px;
-}
-
 .buttonLang__container {
-  position: absolute;
   display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border-radius: 10px;
+  flex-direction: row;
 }
 
-.buttonLang__language {
+.buttonLang {
+  margin-left: 5px;
+  margin-right: 5px;
   display: flex;
-  height: 36px;
-  padding: 10px 7px 10px;
-  cursor: pointer;
+  flex-direction: row;
+  border: none;
+  justify-content: center;
+  align-items: center;
+
+  background-color: transparent;
+
+  font-family: 'Montserrat';
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
 }
 
-.buttonLang__flag {
+.buttonLang:hover {
+  color: black;
+}
+
+.buttonLang__border {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #797878;
+}
+
+.buttonLang__active {
+  color: rgba(188, 230, 254, 1);
+  cursor: auto;
+}
+
+.buttonLang__img {
+  display: block;
+  margin-right: 5px;
   width: 20px;
-  height: 17px;
-}
-
-.buttonLang__text {
-  font-size: 20px;
-  font-weight: 600;
-  margin-left: 3px;
+  height: 20px;
 }
