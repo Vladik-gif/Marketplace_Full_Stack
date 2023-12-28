@@ -10,8 +10,7 @@ public class ProductEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "product_id")
-    private Long productId;
+    private Long id;
     private String name;
     @Column(columnDefinition = "TEXT")
     private String description_product;
@@ -19,21 +18,21 @@ public class ProductEntity {
     private String characteristic_product;
     private double price;
     //private String customer_reviews;
-    private String category; //version 2.0
-    private String seller; //version 2.0
-    private String number; //seller
+    private String category;
+    private String seller;
+    private String number;
     private LocalDateTime createDate = LocalDateTime.now();
     @OneToMany
     private List<ImageFile> image;
 
     public ProductEntity() {}
 
-    public Long getProductId() {
-        return productId;
+    public Long getId() {
+        return id;
     }
 
-    public void setProductId(Long id) {
-        this.productId = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -98,7 +97,8 @@ public class ProductEntity {
     public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
-     public List<ImageFile> getImage() {
+
+    public List<ImageFile> getImage() {
         return image;
     }
 

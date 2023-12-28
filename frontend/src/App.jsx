@@ -6,7 +6,7 @@ import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
 import SecondPage from './pages/SecondPage/SecondPage.jsx';
 import ThirdPage from './pages/ThirdPage/ThirdPage.jsx';
-import FourthPage from './pages/FourthPage/FourthPage.jsx';
+
 //
 import FormTest from './components/FormForTest/FormTest.jsx';
 import FormForTestWithImage from './components/FormForTestWithImage/FormForTestWithImage.jsx';
@@ -25,32 +25,30 @@ import ChargingStation from './components/Routes/Chargingstation.jsx';
 //
 
 const App = () => {
-   return (
-      <Routes>
-         <Route path="" element={<MainLayout />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/mobiles/*" element={<Mobile />} />
-            <Route path="/desktops/*" element={<Desktop />} />
-            <Route path="/foto/*" element={<Foto />} />
-            <Route path="/tvs/*" element={<Tv />} />
-            <Route path="/audio/*" element={<Audio />} />
-            <Route path="/games/*" element={<Game />} />
-            <Route path="/tablets/*" element={<Tablet />} />
-            <Route path="/laptops/*" element={<Laptop />} />
-            <Route path="/home/*" element={<ForHome />} />
-            <Route path="/kitchen/*" element={<Kitchen />} />
-            <Route path="/climate/*" element={<Climate />} />
-            <Route path="/charging_stations/*" element={<ChargingStation />} />
-         </Route>
-         <Route path="/login" element={<Login />} />
-         <Route path="/register" element={<Register />} />
+  return (
+    <Routes>
+      <Route path="" element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/mobiles/*" element={<Mobile />} />
+        <Route path="/desktops/*" element={<Desktop />} />
+        <Route path="/foto/*" element={<Foto />} />
+        <Route path="/tvs/*" element={<Tv />} />
+        <Route path="/audio/*" element={<Audio />} />
+        <Route path="/games/*" element={<Game />} />
+        <Route path="/tablets/*" element={<Tablet />} />
+        <Route path="/laptops/*" element={<Laptop />} />
+        <Route path="/home/*" element={<ForHome />} />
+        <Route path="/kitchen/*" element={<Kitchen />} />
+        <Route path="/climate/*" element={<Climate />} />
+        <Route path="/charging_stations/*" element={<ChargingStation />} />
+      </Route>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
 
-         <Route path="/form" element={<FormTest />} />
-         <Route path="/formImage" element={<FormForTestWithImage />} />
-
-         <Route path="/fourthPage" element={<FourthPage />} />
-      </Routes>
-   );
+      <Route path="/form" element={<FormTest />} />
+      <Route path="/formImage" element={<FormForTestWithImage />} />
+    </Routes>
+  );
 };
 
 export default App;
