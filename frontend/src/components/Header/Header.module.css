@@ -9,7 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0px 10px 0px;
+  padding: 10px 0 10px 0;
   margin-left: 50px;
   margin-right: 50px;
 }
@@ -29,7 +29,7 @@
 .logo__text {
   margin-left: 20px;
 
-  font-family: 'Oregano';
+  font-family: 'Oregano', serif;
   color: inherit;
   font-size: 42px;
   font-weight: 400;
@@ -37,6 +37,7 @@
 }
 
 .header__nav {
+  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: end;
