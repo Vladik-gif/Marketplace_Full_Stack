@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/marketplace #localhost
+    url: jdbc:postgresql://localhost:5432/postgres #localhost
 #    url: jdbc:postgresql://db_backend:5432/marketplace
     username: postgres
     password: postgres

@@ -10,8 +10,9 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: marketplace
     ports:
-      - "5434:5432"
+      - "5432:5432"
     volumes:
+      - ../2. Init Database:/dockerSQL-initdb.d
       - local:/var/lib/postgresql/data
 
   backend-api:
@@ -20,8 +21,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://db_backend:/marketplace
-      SPRING_DATASOURCE_HOST: 5434
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db_backend:5432/marketplace
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect

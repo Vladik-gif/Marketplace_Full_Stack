@@ -21,6 +21,7 @@ public class ProductService implements ProductServIceImpl {
         this.productRepository = productRepository;
         this.productFactory = productFactory;
     }
+
     @Override
     public ProductDTO createProduct(ProductEntity entity) {
         return productFactory.makeProduct(productRepository.save(entity));

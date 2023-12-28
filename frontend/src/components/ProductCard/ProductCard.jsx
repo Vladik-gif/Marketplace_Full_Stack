@@ -5,13 +5,15 @@ import TestGoods from '../../assets/imges/TestGoods.png';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 
-import useFetch from '../../hooks/useFetch';
-
 const ProductCard = () => {
-   // const dates = useFetch("http://localhost:8080/get/products");
-
    const takeDate = () => {
-      console.log(dates);
+      fetch("http://localhost:8080/get/products")
+         .then((response) => {
+            return response.json();
+         })
+         .then((data) => {
+            console.log(data);
+         });
    }
 
    return (

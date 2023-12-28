@@ -1,12 +1,9 @@
 package com.example.backend.api.DTO;
-<<<<<<< HEAD
-import com.example.backend.store.models.GalleryEntity;
-=======
 
 import com.example.backend.store.models.ImageFile;
->>>>>>> 36ebcc2e1b83295b932828390b70452606524c2f
 import org.springframework.stereotype.Component;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -21,15 +18,8 @@ public class ProductDTO {
     private String seller;
     private String number;
     private LocalDateTime createDate = LocalDateTime.now();
-<<<<<<< HEAD
-    private GalleryEntity gallery;
-    public ProductDTO() {
-
-    }
-=======
     private List<ImageFileDTO> image;
     public ProductDTO() {}
->>>>>>> 36ebcc2e1b83295b932828390b70452606524c2f
 
     public Long getId() {
         return id;
