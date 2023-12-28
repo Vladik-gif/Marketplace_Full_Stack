@@ -1,29 +1,32 @@
-.container{
-   width: 70px;
-   height: 36px;
+.container {
+  position: relative;
+  z-index: 1;
+  min-width: 70px;
+  min-height: 36px;
 }
 
 .buttonLang__container {
-   width: 70px;
-   height: 36px;
-   overflow: hidden;
-   background: #FFFFFF;
-   border-radius: 10px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 10px;
 }
 
 .buttonLang__language {
-   display: flex;
-   margin: 10px 0 10px 7px;
-   cursor: pointer;
+  display: flex;
+  height: 36px;
+  padding: 10px 7px 10px;
+  cursor: pointer;
 }
 
-.buttonLang__flag{
-   width: 20px;
-   height: 17px;
+.buttonLang__flag {
+  width: 20px;
+  height: 17px;
 }
 
-.buttonLang__text{
-   font-size: 20px;
-   font-weight: 600;
-   margin-left: 3px;
+.buttonLang__text {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 3px;
 }
