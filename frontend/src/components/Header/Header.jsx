@@ -1,24 +1,24 @@
 import { NavLink } from 'react-router-dom';
-import Logo from '../../assets/svg/logo.svg';
 
 import SvgIcon from '@mui/material/SvgIcon';
 import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
 
-import styles from './Header.module.css';
 import SelectLang from '../SelectLang/SelectLang';
+import Logo from '../../assets/svg/logo.svg';
+
+import styles from './Header.module.css';
 
 const Header = () => {
-  const handleLogoClick = () => {
-    window.location.href = '/';
-  };
+  const hrefLink = '/';
+
   return (
     <div className={styles.header}>
       <div className={`${styles.header__wraper} width_limiter`}>
         <div className={styles.logo}>
-          <NavLink onClick={handleLogoClick} className={styles.logo__link}>
-            <img src={Logo} className={styles.logo__svg} />
+          <NavLink className={styles.logo__link} to={hrefLink}>
+            <img alt={'Logo'} src={Logo} className={styles.logo__svg} />
             <span className={styles.logo__text}>TechHaven</span>
           </NavLink>
         </div>
@@ -41,12 +41,12 @@ const Header = () => {
 
           <SelectLang className={styles.header__selectLang} />
 
-          <NavLink className={styles.header__basket}>
+          <NavLink className={styles.header__basket} to={hrefLink}>
             <SvgIcon sx={{ width: 34, height: 34 }}>
               <ShoppingCartOutlinedIcon />
             </SvgIcon>
           </NavLink>
-          <NavLink className={styles.header__account}>
+          <NavLink className={styles.header__account} to={hrefLink}>
             <SvgIcon sx={{ width: 34, height: 34 }}>
               <AccountCircleOutlinedIcon />
             </SvgIcon>
