@@ -13,9 +13,7 @@ public class ImageFile {
     private String name;
     private String type;
 
-    @Lob
-    @Column(name = "image", length = 10000)
-    private byte[] image;
+    private String image;
 
     @ManyToOne
     private ProductEntity product;
@@ -47,11 +45,11 @@ public class ImageFile {
         this.type = type;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

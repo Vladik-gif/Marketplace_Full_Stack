@@ -8,7 +8,8 @@ public class ImageFileDTO {
     private Long id;
     private String name;
     private String type;
-    private byte[] image;
+    private String image;
+    private Long productId;
 
     public ImageFileDTO() {}
 
@@ -36,11 +37,19 @@ public class ImageFileDTO {
         this.type = type;
     }
 
-    public byte[] getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(byte[] image) {
+    public void setImage(String image) {
         this.image = image;
+    }
+
+    public Long getProductId() {
+        return productId;
+    }
+
+    public void setProductId(Long productId) {
+        this.productId = productId;
     }
 }

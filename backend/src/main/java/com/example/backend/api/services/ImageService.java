@@ -1,55 +1,56 @@
 package com.example.backend.api.services;
 
+import com.example.backend.api.DTO.ImageFileDTO;
 import com.example.backend.api.factory.ImageFileFactory;
 import com.example.backend.api.services.impl.ImageFileServiceImpl;
-import com.example.backend.api.utils.ImageUtl;
 import com.example.backend.store.models.ImageFile;
 import com.example.backend.store.models.ProductEntity;
 import com.example.backend.store.repository.ImageFileRepository;
-import com.example.backend.store.repository.ProductRepository;
-import jakarta.transaction.Transactional;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.util.Optional;
+import java.util.List;
 
 @Service
 public class ImageService implements ImageFileServiceImpl {
 
     private final ImageFileRepository imageFileRepository;
     private final ImageFileFactory imageFileFactory;
-    private final ProductRepository productRepository;
+    private final ImageUploadService imageUploadService;
 
+    @Autowired
     public ImageService(ImageFileRepository imageFileRepository,
                         ImageFileFactory imageFileFactory,
-                        ProductRepository productRepository) {
+                        ImageUploadService imageUploadService) {
         this.imageFileRepository = imageFileRepository;
         this.imageFileFactory = imageFileFactory;
-        this.productRepository = productRepository;
+        this.imageUploadService = imageUploadService;
     }
 
     @Override
-    public String uploadImage(Long id, MultipartFile image) throws IOException {
+    public ImageFileDTO uploadImage(MultipartFile image) {
         ImageFile file = new ImageFile();
-        ProductEntity productId = productRepository.getReferenceById(id);
+        String filename = imageUploadService.getUniqueFilename(image.getOriginalFilename() + " ");
+        imageUploadService.saveImage(image, filename);
 
-        file.setName(image.getOriginalFilename());
+        file.setName(filename);
         file.setType(image.getContentType());
-        file.setImage(ImageUtl.compressImage(image.getBytes()));
-        file.setProduct(productId);
+        file.setImage(filename);
 
-        imageFileFactory.makeImageFile(imageFileRepository.save(file));
-
-        return "Фотограція успішно, добавлена!  : " + image.getOriginalFilename();
-
+        return imageFileFactory.makeImageFile(imageFileRepository.save(file));
     }
 
-    @Override
-    @Transactional
-    public byte[] downloadImage(String name) {
-        Optional<ImageFile> dbImageData = imageFileRepository.findByName(name);
-        return ImageUtl.decompressImage(dbImageData.get().getImage());
+    public void setProductEntity(ProductEntity product) {
+        List<ImageFile> images = product.getImage();
+        for (ImageFile image : images) {
+            image.setProduct(product);
+            imageFileRepository.save(image);
+        }
+    }
+
+    public ImageFileDTO getImageFileById(Long id) {
+        return imageFileFactory.makeImageFile(imageFileRepository.getReferenceById(id));
     }
 
     @Override
