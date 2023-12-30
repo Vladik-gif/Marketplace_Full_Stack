@@ -15,16 +15,21 @@ public class ProductService implements ProductServIceImpl {
 
     private final ProductRepository productRepository;
     private final ProductFactory productFactory;
+    private final ImageService imageService;
 
     public ProductService(ProductRepository productRepository,
-                          ProductFactory productFactory) {
+                          ProductFactory productFactory, ImageService imageService) {
         this.productRepository = productRepository;
         this.productFactory = productFactory;
+        this.imageService = imageService;
     }
 
     @Override
     public ProductDTO createProduct(ProductEntity entity) {
-        return productFactory.makeProduct(productRepository.save(entity));
+        ProductEntity product = productRepository.save(entity);
+        ProductDTO productDTO = productFactory.makeProduct(product);
+        imageService.setProductEntity(product);
+        return productDTO;
     }
 
     @Override

@@ -14,6 +14,7 @@ public class ImageFileFactory {
         imageFileDTO.setName(imageFile.getName());
         imageFileDTO.setType(imageFile.getType());
         imageFileDTO.setImage(imageFile.getImage());
+        imageFileDTO.setProductId(imageFile.getProduct().getId());
 
         return imageFileDTO;
     }

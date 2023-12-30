@@ -1,8 +1,8 @@
 package com.example.backend.api.controllers;
 
+import com.example.backend.api.DTO.ImageFileDTO;
 import com.example.backend.api.services.ImageService;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -13,8 +13,8 @@ import java.io.IOException;
 public class ImageController {
 
     private final ImageService imageService;
-    private static final String CREATE_IMAGE = "/{id}/image";
-    private static final String GET_IMAGE_NAME = "/{name}";
+    private static final String CREATE_IMAGE = "/image";
+    private static final String GET_IMAGE_BY_ID = "/{id}";
     private static final String DELETE_IMAGE_ID = "/delete/image/{id}";
 
     public ImageController(ImageService imageService) {
@@ -22,20 +22,18 @@ public class ImageController {
     }
 
     @PostMapping(CREATE_IMAGE)
-    public ResponseEntity<?> create(@PathVariable Long id, @ModelAttribute MultipartFile image) throws IOException {
-        String uploadImage = imageService.uploadImage(id,image);
-
-        return ResponseEntity.status(HttpStatus.OK).body(uploadImage);
+    public ResponseEntity<?> create(@ModelAttribute MultipartFile image) throws IOException {
+        ImageFileDTO uploadImage = imageService.uploadImage(image);
+        return ResponseEntity.status(HttpStatus.CREATED).body(uploadImage);
     }
 
-    @GetMapping(GET_IMAGE_NAME)
-    public ResponseEntity<?> downloadImage(@PathVariable String name){
-        byte[] imageData = imageService.downloadImage(name);
+    @GetMapping(GET_IMAGE_BY_ID)
+    public ResponseEntity<?> getImageByID(@PathVariable("id") Long id){
+        ImageFileDTO imageFileDTO = imageService.getImageFileById(id);
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .contentType(MediaType.valueOf("image/png"))
-                .body(imageData);
+                .body(imageFileDTO);
     }
 
     @DeleteMapping(DELETE_IMAGE_ID)

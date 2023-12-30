@@ -1,9 +1,7 @@
 package com.example.backend.api.DTO;
 
-import com.example.backend.store.models.ImageFile;
 import org.springframework.stereotype.Component;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.List;
 
