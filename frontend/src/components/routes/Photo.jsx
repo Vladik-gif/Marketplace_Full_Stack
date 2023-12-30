@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import SecondPage from '../../pages/SecondPage/SecondPage';
 import ThirdPage from '../../pages/ThirdPage/ThirdPage';
 
-const Foto = () => {
+const Photo = () => {
   return (
     <>
       <Routes>
@@ -13,4 +13,4 @@ const Foto = () => {
   );
 };
 
-export default Foto;
+export default Photo;
