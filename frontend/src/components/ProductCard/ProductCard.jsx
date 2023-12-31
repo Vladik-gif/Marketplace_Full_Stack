@@ -7,7 +7,7 @@ import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 
 const ProductCard = () => {
    const takeDate = () => {
-      fetch("http://localhost:8080/get/products")
+      fetch("http://localhost:8080/products")
          .then((response) => {
             return response.json();
          })
