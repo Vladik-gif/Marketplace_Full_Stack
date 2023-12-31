@@ -5,19 +5,13 @@ import TestGoods from '../../assets/imges/TestGoods.png';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import BalanceOutlinedIcon from '@mui/icons-material/BalanceOutlined';
 
+import useGetDate from '../../hooks/useGetData';
+
 const ProductCard = () => {
-   const takeDate = () => {
-      fetch("http://localhost:8080/products")
-         .then((response) => {
-            return response.json();
-         })
-         .then((data) => {
-            console.log(data);
-         });
-   }
+   const [data] = useGetDate('people/1/');
 
    return (
-      <div className={styles.product_card} onClick={takeDate}>
+      <div className={styles.product_card} onClick={() => console.log(data)}>
          <div className={styles.about_product}>
             <img src={TestGoods} alt="product" className={styles.img_product} />
             <span className={styles.name_product}>Samsung Galaxy S21 FE G990B 6/128GB Light Violet (SM-G990BLVFSEK) NEW</span>

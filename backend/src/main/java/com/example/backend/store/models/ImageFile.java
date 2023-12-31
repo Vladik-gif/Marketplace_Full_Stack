@@ -1,17 +1,25 @@
-package com.example.backend.api.DTO;
+package com.example.backend.store.models;
 
-import org.springframework.stereotype.Component;
 
-@Component
-public class ImageFileDTO {
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "Image")
+public class ImageFile {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String type;
-    private String image;
-    private Long productId;
 
-    public ImageFileDTO() {}
+    private String image;
+
+    @ManyToOne
+    private ProductEntity product;
+
+    public ImageFile() {
+    }
 
     public Long getId() {
         return id;
@@ -45,11 +53,11 @@ public class ImageFileDTO {
         this.image = image;
     }
 
-    public Long getProductId() {
-        return productId;
+    public ProductEntity getProduct() {
+        return product;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setProduct(ProductEntity product) {
+        this.product = product;
     }
 }
