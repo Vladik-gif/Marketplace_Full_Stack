@@ -4,24 +4,24 @@ import MainLayout from './components/MainLayout/MainLayout.jsx';
 import Home from './pages/Home/Home.jsx';
 import Login from './pages/Login/Login.jsx';
 import Register from './pages/Register/Register.jsx';
-import SecondPage from './pages/SecondPage/SecondPage.jsx';
-import ThirdPage from './pages/ThirdPage/ThirdPage.jsx';
+// import SecondPage from './pages/SecondPage/SecondPage.jsx';
+// import ThirdPage from './pages/ThirdPage/ThirdPage.jsx';
 
 //
 import FormTest from './components/FormForTest/FormTest.jsx';
 import FormForTestWithImage from './components/FormForTestWithImage/FormForTestWithImage.jsx';
-import Mobile from './components/Routes/Mobile.jsx';
-import Desktop from './components/Routes/Desktop.jsx';
-import Foto from './components/Routes/Foto.jsx';
-import Tv from './components/Routes/Tv.jsx';
-import Audio from './components/Routes/Audio.jsx';
-import Game from './components/Routes/Game.jsx';
-import Tablet from './components/Routes/Tablet.jsx';
-import Laptop from './components/Routes/Laptop.jsx';
-import ForHome from './components/Routes/Home.jsx';
-import Kitchen from './components/Routes/Kitchen.jsx';
-import Climate from './components/Routes/Climate.jsx';
-import ChargingStation from './components/Routes/Chargingstation.jsx';
+import Mobile from './components/routes/Mobile.jsx';
+import Desktop from './components/routes/Desktop.jsx';
+import Photo from './components/routes/Photo.jsx';
+import Tv from './components/routes/Tv.jsx';
+import Audio from './components/routes/Audio.jsx';
+import Game from './components/routes/Game.jsx';
+import Tablet from './components/routes/Tablet.jsx';
+import Laptop from './components/routes/Laptop.jsx';
+import ForHome from './components/routes/Home.jsx';
+import Kitchen from './components/routes/Kitchen.jsx';
+import Climate from './components/routes/Climate.jsx';
+import ChargingStation from './components/routes/Chargingstation.jsx';
 //
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/mobiles/*" element={<Mobile />} />
         <Route path="/desktops/*" element={<Desktop />} />
-        <Route path="/foto/*" element={<Foto />} />
+        <Route path="/photo/*" element={<Photo />} />
         <Route path="/tvs/*" element={<Tv />} />
         <Route path="/audio/*" element={<Audio />} />
         <Route path="/games/*" element={<Game />} />
