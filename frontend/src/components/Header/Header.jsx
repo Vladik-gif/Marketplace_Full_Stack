@@ -10,14 +10,11 @@ import styles from './Header.module.css';
 import SelectLang from '../SelectLang/SelectLang';
 
 const Header = () => {
-  const handleLogoClick = () => {
-    window.location.href = '/';
-  };
   return (
     <div className={styles.header}>
       <div className={`${styles.header__wraper} width_limiter`}>
         <div className={styles.logo}>
-          <NavLink onClick={handleLogoClick} className={styles.logo__link}>
+          <NavLink to="/" className={styles.logo__link}>
             <img src={Logo} className={styles.logo__svg} />
             <span className={styles.logo__text}>TechHaven</span>
           </NavLink>
