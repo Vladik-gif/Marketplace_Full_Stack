@@ -8,7 +8,7 @@ import styles from './ProductCardListItem.module.css';
 const ProductCardListItem = ({ image, discription, price }) => {
   return (
     <>
-      <NavLink className={styles.prodCardItem}>
+      <div className={styles.prodCardItem}>
         <div className={styles.prodCardItem__wraper}>
           <img className={styles.prodCardItem__img} src={image} />
         </div>
@@ -32,7 +32,7 @@ const ProductCardListItem = ({ image, discription, price }) => {
             </NavLink>
           </div>
         </div>
-      </NavLink>
+      </div>
     </>
   );
 };
