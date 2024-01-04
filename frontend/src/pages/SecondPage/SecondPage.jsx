@@ -149,7 +149,7 @@ const SecondCPage = () => {
         ]);
         break;
 
-      case '/foto':
+      case '/photo':
         setTitle('Фото та відео');
         setDataToShow([
           {
