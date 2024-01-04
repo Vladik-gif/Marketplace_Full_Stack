@@ -42,7 +42,7 @@ const SideBar = () => {
         </li>
         <li className={styles.sideBar__item}>
           <NavLink
-            to="/foto"
+            to="/photo"
             className={({ isActive }) =>
               isActive ? styles.sideBar__link__activeLink : styles.sideBar__link
             }

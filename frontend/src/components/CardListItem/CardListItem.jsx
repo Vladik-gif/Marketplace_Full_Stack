@@ -9,7 +9,7 @@ const CardListItem = ({ name, image, path }) => {
     <>
       <NavLink to={`${pathname}/${path}`} className={styles.card}>
         <div className={styles.card__containerFirst}>
-          <img className={styles.card__image} src={image} />
+          <img className={styles.card__image} src={image} alt={'electronics'} />
         </div>
 
         <div className={styles.card__containerSecond}>
